@@ -1,0 +1,99 @@
+<!doctype html?
+<html>
+<script src="angular.min.js"></script>
+<head>
+<title>REGISTRATION FORM</title>
+</head>
+<body>
+<CENTER>
+<h1 style="color:tomato;">REGISTRATION FORM</h1></CENTER>
+<div ng-app="myApp" ng-controller="myCtrl">
+First Name:<input type="text" ng-model="firstName">
+<br><br>Last Name:<input type="text" ng-model="lastName"></br>
+<br>
+Full  Name:{{firstName+""+lastName}}
+<script>
+var app=angular.module("myApp",[]);
+app.controller("myCtrl",function($scope){
+ $scope.firstName="varshini";
+ $scope.lastName="shekar";
+});
+</script>
+<br><br>
+ADDRESS:
+<textarea name="message"rows="3"cols="20" required>
+</textarea>
+<br><br>
+<form>
+GENDER:
+<input type="radio" ng-model="myVar" value="male">male
+<input type="radio" ng-model="myVar" value="female">female
+</form>
+
+<div ng-switch="myVar">
+<div ng-switch-when="male">
+<h1>male</h1>
+</div>
+<div ng-switch-when="female">
+< h1>female</h1>
+</div>
+</div>
+<br><br>
+<form>
+COURSE:
+<select ng-model="myVar">
+<option value="IT">IT
+<option value="CSE">CSE
+<option value="CIVIL">CIVIL
+<option value="MECH">MECH
+</select>
+
+<div ng-switch="myVar">
+<div ng-switch-when="IT">
+<h3>IT</h3>
+</div>
+<div ng-switch-when="CSE">
+<h3>CSE</h3>
+</div>
+<div ng-switch-when="CIVIL">
+<h3>CIVIL</h3>
+</div>
+<div ng-switch-when="MECH">
+<h3>MECH</h3>
+</div>
+</div>
+</form>
+
+COUNTRY:
+<form>
+Select a country:
+<select ng-model="myVar">
+<option value="INDIA">INDIA
+<option value="PAKISTAN">PAKISTAN
+<option value="ITALY">ITALY
+<option value="USA">USA
+</select>
+
+<div ng-switch="myVar">
+<div ng-switch-when="INDIA">
+<h3>INDIA</h3>
+</div>
+<div ng-switch-when="PAKISTAN">
+<h3>PAKISTAN</h3>
+</div>
+<div ng-switch-when="ITALY">
+<h3>ITALY</h3>
+</div>
+<div ng-switch-when="USA">
+<h3>USA</h3>
+</div>
+<div>
+</form>
+<CENTER>
+<button type="button" onclick="alert('THANK YOU')">SUBMIT</button>
+<button type="button" onclick="alert('CANCELLED')">CANCEL</button>
+</CENTER>
+</form>
+</body>
+</html>
+
